@@ -12,6 +12,7 @@
     cd <your_path>/Qbot2e_simulation/
     catkin_make
     ```
+
 3. Config the env.
     ```bash
     # Do it in each new terminal
