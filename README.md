@@ -78,3 +78,18 @@
    3. Run `src/turtlebot3_controller/matlab/demo.m`.
 
 ![demo2](./asset/demo2.gif)
+
+3. Use Python-ROS to control it!
+   1. Requirements: `numpy`.
+
+   2. Launch the robot.
+        ```bash
+        roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+        ```
+    
+    3. Run controller.
+        ```bash
+        rosrun turtlebot3_controller demo.py
+        ```
+
+![demo3](./asset/demo3.gif)
