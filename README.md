@@ -66,4 +66,14 @@
 
     Note that `/cmd_vel` is the control input and `/odom` is the localization, they are the same topics we encounter in MATLAB, i.e., `/mobile_base/commands/velocity` and `/odom`.
 
-2. Use MATLAB-ROS to control it! (TODO)
+2. Use MATLAB-ROS to control it!
+   1. Requirements: `ROS Toolbox`.
+
+   2. Launch the robot.
+        ```bash
+        roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+        ```
+
+   3. Run `src/turtlebot3_controller/matlab/demo.m`.
+
+![demo2](./asset/demo2.gif)
