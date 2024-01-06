@@ -75,7 +75,7 @@
         roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
         ```
 
-   3. Run `src/turtlebot3_controller/matlab/demo.m`.
+   3. Run `src/turtlebot3_controller/src/matlab/demo.m`.
 
 ![demo2](./asset/demo2.gif)
 
