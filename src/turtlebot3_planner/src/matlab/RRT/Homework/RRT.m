@@ -12,11 +12,10 @@ Delta = 30;           % 设置扩展步长
 
 % 建树初始化
 T.v(1).x = x_I;     % T是我们要做的树，v是节点，这里先把起始点加入到T里面来
-T.v(1).y = y_I;     
+T.v(1).y = y_I;
 T.v(1).xPrev = x_I; % 起始节点的父节点仍然是其本身
-T.v(1).yPrev = y_I; 
-T.v(1).dist = 0;    % 从父节点到该节点的距离，这里可取欧氏距离
-T.v(1).indPrev = 0; % 父节点的索引
+T.v(1).yPrev = y_I;
+T.v(1).indPrev = 1; % 父节点的索引
 
 % 开始构建树——作业部分
 figure(1);
@@ -53,10 +52,11 @@ for iter = 1:3000
     % Step 4: 将x_new插入树T
     % 提示: 新节点x_new的父节点是x_near
 
-    % Step 5: 将x_near和x_new之间的路径画出来
-    % 提示: 使用plot绘制，因为要多次在同一张图上绘制线段，所以每次使用plot后需要接上hold on命令
+    % 将x_near和x_new之间的路径画出来
+    plot([x_near(1); x_new(1)], [x_near(2); x_new(2)], 'black', 'Linewidth', 3);
+    hold on;
 
-    % Step 5:检查是否到达目标点附近
+    % Step 5: 检查是否到达目标点附近
     % 提示: 注意使用目标点阈值Thr，若当前节点和终点的欧式距离小于Thr，则跳出当前for循环
 
     pause(0.1); % 暂停0.1s，使得RRT扩展过程容易观察
