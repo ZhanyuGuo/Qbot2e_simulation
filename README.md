@@ -4,44 +4,40 @@
 
 1. Download the repo.
     ```bash
-    git clone https://github.com/ZhanyuGuo/Qbot2e_simulation
+    git clone https://github.com/ZhanyuGuo/Qbot2e_simulation.git
     ```
 
 2. Compile.
     ```bash
-    cd <your_path>/Qbot2e_simulation/
-    catkin_make
+    cd <YOUR_PATH>/Qbot2e_simulation/
+    catkin_make  # or catkin build
     ```
 
 3. Config the env.
     ```bash
-    # Do it in each new terminal
-    cd <your_path>/Qbot2e_simulation/
+    # each new terminal
+    cd <YOUR_PATH>/Qbot2e_simulation/
     source devel/setup.bash
     export TURTLEBOT3_MODEL=burger  # options: burger, waffle, waffle_pi
 
-    # Or add above two lines in the end of ~/.bashrc
+    # or add the above two lines to ~/.bashrc
     nano ~/.bashrc
-    # add: source <your_path>/Qbot2e_simulation/devel/setup.bash
+    # add: source <YOUR_PATH>/Qbot2e_simulation/devel/setup.bash
     # add: export TURTLEBOT3_MODEL=burger
-    # ctrl + X and Enter Y to save
     
-    # Then
-    source ~/.bashrc
-    # Or open a new terminal
+    source ~/.bashrc  # or open a new terminal
      ```
 
 4. Run robot in a empty gazebo world.
    ```bash
+   # NOTE: you have to source and export again if you have not modified the ~/.bashrc
    roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
 
-   # In a new terminal, use the keyboard to control it
+   # in a new terminal, use the keyboard to control it
    roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-
-   # NOTE: you have to source and export again if you have not modified the ~/.bashrc
    ```
 
-![demo1](./asset/demo1.png)
+    ![demo1](./asset/demo1.png)
 
 ## Details
 
@@ -77,7 +73,7 @@
 
    3. Run `src/turtlebot3_controller/src/matlab/demo.m`.
 
-![demo2](./asset/demo2.gif)
+    ![demo2](./asset/demo2.gif)
 
 3. Use Python-ROS to control it!
    1. Requirements: `numpy`.
@@ -92,4 +88,4 @@
         rosrun turtlebot3_controller demo.py
         ```
 
-![demo3](./asset/demo3.gif)
+    ![demo3](./asset/demo3.gif)
