@@ -2,42 +2,47 @@
 
 ## Quick Start
 
-1. Download the repo.
+1. Download the repository.
     ```bash
     git clone https://github.com/ZhanyuGuo/Qbot2e_simulation.git
     ```
 
-2. Compile.
+2. Compile the repository.
     ```bash
     cd <YOUR_PATH>/Qbot2e_simulation/
     catkin_make  # or catkin build
     ```
 
-3. Config the env.
+3. Config the environment.
     ```bash
-    # each new terminal
+    # in each new terminal
     cd <YOUR_PATH>/Qbot2e_simulation/
     source devel/setup.bash
     export TURTLEBOT3_MODEL=burger  # options: burger, waffle, waffle_pi
+
+    # or
+    source script/env.sh
 
     # or add the above two lines to ~/.bashrc
     nano ~/.bashrc
     # add: source <YOUR_PATH>/Qbot2e_simulation/devel/setup.bash
     # add: export TURTLEBOT3_MODEL=burger
-    
-    source ~/.bashrc  # or open a new terminal
-     ```
+    # save and exit, and then
+    source ~/.bashrc  # or re-open the terminal
+    ```
 
-4. Run robot in a empty gazebo world.
+4. Run the robot in an empty gazebo world.
    ```bash
-   # NOTE: you have to source and export again if you have not modified the ~/.bashrc
+   # NOTE: you have to source and export again if you have NOT modified the ~/.bashrc
    roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
 
    # in a new terminal, use the keyboard to control it
    roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
    ```
 
-    ![demo1](./asset/demo1.png)
+    <p align="center">
+        <img src="asset/demo1.png">
+    </p>
 
 ## Details
 
@@ -61,7 +66,7 @@
     /tf
     ```
 
-    Note that `/cmd_vel` is the control input and `/odom` is the localization, they are the same topics we encounter in MATLAB, i.e., `/mobile_base/commands/velocity` and `/odom`.
+    Note that `/cmd_vel` is the control input and `/odom` is the localization, they are the same topics we encounter within MATLAB in real world Qbot, i.e., `/mobile_base/commands/velocity` and `/odom`.
 
 2. Use MATLAB-ROS to control it!
    1. Requirements: `ROS Toolbox`.
@@ -71,9 +76,11 @@
         roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
         ```
 
-   3. Run `src/turtlebot3_controller/src/matlab/demo.m`.
+   3. Run `src/turtlebot3_controller/src/matlab/demo.m` in MATLAB.
 
-    ![demo2](./asset/demo2.gif)
+    <p align="center">
+        <img src="asset/demo2.gif">
+    </p>
 
 3. Use Python-ROS to control it!
    1. Requirements: `numpy`.
@@ -88,4 +95,6 @@
         rosrun turtlebot3_controller demo.py
         ```
 
-    ![demo3](./asset/demo3.gif)
+    <p align="center">
+        <img src="asset/demo3.gif">
+    </p>
